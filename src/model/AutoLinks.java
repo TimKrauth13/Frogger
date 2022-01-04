@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public class Auto extends PApplet {
+public class AutoLinks extends PApplet {
 
 	
 	/**
@@ -11,7 +11,7 @@ public class Auto extends PApplet {
 	 * @param x
 	 * @param y
 	 */
-	public void drawAuto(PApplet window, float x, float y){ 
+	public void drawAutoLinks(PApplet window, float x, float y){ 
 		
 	//Räder
 		window.fill(20);
