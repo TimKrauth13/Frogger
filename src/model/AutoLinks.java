@@ -3,7 +3,6 @@ package model;
 import processing.core.PApplet;
 
 public class AutoLinks extends PApplet {
-
 	
 	/**
 	 * Konstruktor für Auto Klasse
@@ -12,7 +11,7 @@ public class AutoLinks extends PApplet {
 	 * @param y
 	 */
 	public void drawAutoLinks(PApplet window, float x, float y){ 
-		
+	
 	//Räder
 		window.fill(20);
 		window.rect(x, y-9, 25, 13);

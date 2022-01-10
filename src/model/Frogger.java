@@ -10,6 +10,8 @@ import processing.core.PApplet;
 public class Frogger extends PApplet {
 	
 	
+	private int angle;
+
 	/**
 	 * drawFrogger-Funktion
 	 * @param window
@@ -70,10 +72,8 @@ public class Frogger extends PApplet {
 		 	window.fill(0);
 		 	window.circle(x-15, y-15, 10);
 		 	window.circle(x+15, y-15, 10);
-		 	
-			
-		 	
 	 }
+
 }
 
 

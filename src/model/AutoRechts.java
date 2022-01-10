@@ -5,7 +5,7 @@ import processing.core.PApplet;
 public class AutoRechts extends PApplet {
 
 	public void drawAutoRechts(PApplet window, float x, float y){ 
-	
+		 
 	//Räder
 			window.fill(20);
 			window.rect(x, y-9, 25, 13);

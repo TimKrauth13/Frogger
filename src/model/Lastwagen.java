@@ -13,7 +13,7 @@ public class Lastwagen extends PApplet{
 		 */
 	
 		public void drawLastwagen(PApplet window, float x, float y){ 
-			
+		 
 		//Räder
 			window.fill(20);
 			window.rect(x+35, y-9, 25, 11);
