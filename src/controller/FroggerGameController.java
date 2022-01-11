@@ -42,6 +42,8 @@ public class FroggerGameController extends PApplet{
 	Bewegung m4;
 	
 	Kollision k1;
+	Kollision k2;
+	Kollision k3;
 	
 //startet das Fenster	
 	public static void main(String[] args) {
@@ -79,6 +81,10 @@ public class FroggerGameController extends PApplet{
 		 b4 = new Baum(400, 158, 1); 
 		 b5 = new Baum(100, 314, 1); 
 		 b6 = new Baum(200, 314, 1); 
+		 
+		 k1 = new Kollision();
+		 k2 = new Kollision();
+		 k3 = new Kollision();
 	  }
 	 
 	/**
@@ -131,8 +137,12 @@ public class FroggerGameController extends PApplet{
 		  l2.drawLastwagen(this);
 		  l4.drawLastwagen(this);
 		 	
-		 
-		 
+		//Kollision Frogger mit Lastwagen
+		  k2.checkCollisionL(f1.xFrogger, f1.yFrogger, l1.getXLastwagen(), l1.getYLastwagen(), f1);
+		  k2.checkCollisionL(f1.xFrogger, f1.yFrogger, l2.getXLastwagen(), l2.getYLastwagen(), f1);
+		  k2.checkCollisionL(f1.xFrogger, f1.yFrogger, l3.getXLastwagen(), l3.getYLastwagen(), f1);
+		  k2.checkCollisionL(f1.xFrogger, f1.yFrogger, l4.getXLastwagen(), l4.getYLastwagen(), f1);
+		  
 	//Bewegung AutoLinks
 		  a1.setXAutoLinks(m3.moveAutoLinks(a1.getXAutoLink(), speed)); 
 		  
@@ -140,7 +150,6 @@ public class FroggerGameController extends PApplet{
 		  a1.drawAutoLinks(this);
 		  
 	//Kollision Frogger mit AutoLinks
-		  Kollision k1 = new Kollision();
 		  k1.checkCollisionAL(f1.xFrogger, f1.yFrogger, a1.getXAutoLink(), a1.getYAutoLinks(), f1);
 		  
 		  
@@ -154,6 +163,12 @@ public class FroggerGameController extends PApplet{
 		  c1.drawAutoRechts(this);
 		  c3.drawAutoRechts(this);
 		  c2.drawAutoRechts(this);
+		  
+	//Kollision Frogger mit AutoRechts
+		  k3.checkCollisionAR(f1.xFrogger, f1.yFrogger, c1.getXAutoRechts(), c1.getYAutoRechts(), f1);
+		  k3.checkCollisionAR(f1.xFrogger, f1.yFrogger, c2.getXAutoRechts(), c2.getYAutoRechts(), f1);
+		  k3.checkCollisionAR(f1.xFrogger, f1.yFrogger, c3.getXAutoRechts(), c3.getYAutoRechts(), f1);
+		  
 	  
 		  System.out.println(f1.xFrogger);
 		  System.out.println(f1.yFrogger);
