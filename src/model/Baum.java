@@ -1,46 +1,93 @@
 package model;
 
 import processing.core.PApplet;
-/**
- * Klasse Baum wird erstellt
- * @author Tim
- *
- */
+
+
+
 
 public class Baum extends PApplet {
 
-	/**
-	 * Konstruktor für Baum Klasse
-	 * @param window
-	 * @param x
-	 * @param y
-	 */
-	public void drawBaum(PApplet window, float x, float y){ 
+	private float xBaum = 200;
+	private float yBaum = 79;
+	private int richtung = 0;
+	
+	
+/**
+ * Konstruktor für Baum-Klasse	
+ * @param xBaum
+ * @param yBaum
+ * @param richtung
+ */
+	public Baum(float xBaum, float yBaum, int richtung) {
+		this.xBaum = xBaum;
+		this.yBaum = yBaum;
+		this.richtung = richtung;
+	}
+
+
+
+/**
+ * Getter und Setter für Baum Klasse
+ * @return
+ */
+	public float getXBaum() {
+		return xBaum;
+	}
+
+	public void setXBaum(float xBaum) {
+		this.xBaum = xBaum;
+	}
+
+	public float getYBaum() {
+		return yBaum;
+	}
+
+	public void setYBaum(float yBaum) {
+		this.yBaum = yBaum;
+	}
+
+	public int getRichtung() {
+		return richtung;
+	}
+
+	public void setRichtung(int richtung) {
+		this.richtung = richtung;
+	}
+
+
+
+/**
+ * Drawmethode für Baum-Klasse
+ * @param window
+ * @param x
+ * @param y
+ */
+	public void drawBaum(PApplet window){ 
 		
 	//Baumstamm
 		 
 		
 	 	window.fill(140,111,10);
-	 	window.circle(x, y+30, 60);
-	 	window.rect(x, y, 150, 60);
+	 	window.circle(xBaum, yBaum+30, 60);
+	 	window.rect(xBaum, yBaum, 150, 60);
 	 	
 	 	
 	 	window.fill(160,131,30);
-	 	window.circle(x+150, y+30, 60);
+	 	window.circle(xBaum+150, yBaum+30, 60);
 	 	
 	 	window.fill(140,111,10);
-	 	window.circle(x+150, y+30, 50);
+	 	window.circle(xBaum+150, yBaum+30, 50);
 	 	
 	 	window.fill(160,131,30);
-	 	window.circle(x+150, y+30, 40);
+	 	window.circle(xBaum+150, yBaum+30, 40);
 	 	
 	 	window.fill(140,111,10);
-	 	window.circle(x+150, y+30, 30);
+	 	window.circle(xBaum+150, yBaum+30, 30);
 	 	
 	 	window.fill(160,131,30);
-	 	window.circle(x+150, y+30, 20);
+	 	window.circle(xBaum+150, yBaum+30, 20);
 	 	
 	 	window.fill(140,111,10);
-	 	window.circle(x+148, y+35, 5);
+	 	window.circle(xBaum+148, yBaum+35, 5);
 	}
 }

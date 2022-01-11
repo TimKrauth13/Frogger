@@ -13,29 +13,11 @@ import model.Bewegung;
 
 public class FroggerGameController extends PApplet{
 	
-	//X und Y Koordinaten
-	float xFrogger = 40;
-	float yFrogger = 900;
-	float xBaumR = 200;
-	float yBaumR = 79;
-	float xBaumL = 200;
-	float yBaumL = 79;
-	float xAutoRechts = 390;
-	float yAutoRechts = 570;
-	float xAutoLinks = 200;
-	float yAutoLinks = 805;
-	float xLastwagen = 200;
-	float yLastwagen = 490;
-	float xStein = 200;
-	float yStein = 39;
-	float xSeerose = 79;
-	float ySeerose = 39;
-	float speedFrogger = 79;
+//Speed Variabele
 	float speed = 5;
-   
-	int i = 3;
+		  
 	
-	//Objekte
+//Objekte
 	Frogger f1;
 	Seerose r1;
 	Seerose r2;
@@ -54,109 +36,165 @@ public class FroggerGameController extends PApplet{
 	AutoRechts c2;
 	AutoRechts c3;
 	AutoLinks a1;
+	Bewegung m1;
+	Bewegung m2;
+	Bewegung m3;
+	Bewegung m4;
 	
 	Kollision k1;
 	
-	
+//startet das Fenster	
 	public static void main(String[] args) {
-		//startet das Fenster
 		PApplet.main("controller.FroggerGameController");
 		}
 
-	 
+//Objekte erstellung	 
 	 public void setup() {
+		 f1 = new Frogger(356, 900, 79); 
+		 
+		 m1 = new Bewegung();
+		 m2 = new Bewegung();
+		 m3 = new Bewegung();
+		 m4 = new Bewegung();
+		 
+		 a1 = new AutoLinks(200, 805);
+		 
+		 c1 = new AutoRechts(590, 568);
+		 c2 = new AutoRechts(440, 568);
+		 c3 = new AutoRechts(190, 726);
+		 
+		 l1 = new Lastwagen(200, 490);
+		 l2 = new Lastwagen(-36, 490);
+		 l3 = new Lastwagen(250, 647);
+		 l4 = new Lastwagen(400, 647);
+		 
+		 r1 = new Seerose(198, 39);
+		 r2 = new Seerose(354, 39);
+		 r3 = new Seerose(511, 39);
+		 
+		 b1 = new Baum(200, 79, 0); 
+		 b2 = new Baum(0, 236, 0); 
+		 b3 = new Baum(300, 79, 0); 
+		 
+		 b4 = new Baum(400, 158, 1); 
+		 b5 = new Baum(100, 314, 1); 
+		 b6 = new Baum(200, 314, 1); 
 	  }
+	 
 	/**
 	   * Aufruf Draw-Methode für Bäume und Autos
 	   */
 	  public void draw() {
 	
+	//Hintergrundbild wird geladen
 		  PImage img;
 	      img = loadImage("images/background.PNG");
 	      image(img, 0, 0);
 	      
-	     
+	//Erstellung Seerosen-Objekte
+		  r1.drawSeerose(this);
+		  r2.drawSeerose(this);
+		  r3.drawSeerose(this);
+		  
+	//Bewegung für Baum-Objekte	  
+		  b1.setXBaum(m1.moveBaum(b1.getXBaum(), speed+4, b1.getRichtung()));
+		  b2.setXBaum(m1.moveBaum(b2.getXBaum(), speed+4, b2.getRichtung()));
+		  b3.setXBaum(m1.moveBaum(b3.getXBaum(), speed+4, b3.getRichtung()));
+		  b4.setXBaum(m1.moveBaum(b4.getXBaum(), speed, b4.getRichtung()));
+		  b5.setXBaum(m1.moveBaum(b5.getXBaum(), speed, b5.getRichtung()));
+		  b6.setXBaum(m1.moveBaum(b6.getXBaum(), speed, b6.getRichtung()));
+		
+	//Erstellung Baum-Objekte	  
+		  b1.drawBaum(this);
+		  b2.drawBaum(this);
+		  b3.drawBaum(this);
+		  b4.drawBaum(this);
+		  b5.drawBaum(this);
+		  b6.drawBaum(this);  
+		  
+		  
+		  
+	 //Erstellung Frogger-Objekt
+		 
+	      f1.drawFrogger(this);
 	      
-	      r1 = new Seerose();
-		  r1.drawSeerose(this, xSeerose+118, ySeerose);
-		  r2 = new Seerose();
-		  r2.drawSeerose(this, xSeerose+275, ySeerose);
-		  r3 = new Seerose();
-		  r3.drawSeerose(this, xSeerose+432, ySeerose);
-		  
-		  Bewegung m1 = new Bewegung();
-		  xBaumR = m1.moveBaum(xBaumR, speed+4, 0);
-		  b1 = new Baum(); 
-		  b1.drawBaum(this, xBaumR, yBaumR);
-		  b3 = new Baum(); 
-		  b3.drawBaum(this, xBaumR-200, yBaumR+157);
-		  b5 = new Baum(); 
-		  b5.drawBaum(this, xBaumR+100, yBaumR);
-		  
-		  xBaumL = m1.moveBaum(xBaumL, speed, 34);
-		  b2 = new Baum(); 
-		  b2.drawBaum(this, xBaumL+200, yBaumL+79);
-		  b4 = new Baum(); 
-		  b4.drawBaum(this, xBaumL-100, yBaumL+235);
-		  b6 = new Baum(); 
-		  b6.drawBaum(this, xBaumL, yBaumL+235);  
+	      
+	 //Bewegung LastwagenObjekte
+	      l1.setXLastwagen(m2.moveLastwagen(l1.getXLastwagen(), speed));
+	      l2.setXLastwagen(m2.moveLastwagen(l2.getXLastwagen(), speed));
+	      l3.setXLastwagen(m2.moveLastwagen(l3.getXLastwagen(), speed));
+	      l4.setXLastwagen(m2.moveLastwagen(l4.getXLastwagen(), speed));
+	      
+	 //Erstellung Lastwagen-Objekte 
+		  l1.drawLastwagen(this);
+		  l3.drawLastwagen(this);
+		  l2.drawLastwagen(this);
+		  l4.drawLastwagen(this);
+		 	
 		 
 		 
+	//Bewegung AutoLinks
+		  a1.setXAutoLinks(m3.moveAutoLinks(a1.getXAutoLink(), speed)); 
 		  
-		  f1 = new Frogger(); 
-	      f1.drawFrogger(this, xFrogger, yFrogger);
-	      
-	      Bewegung m2 = new Bewegung();
-		  xLastwagen = m2.moveLastwagen(xLastwagen, speed);
-	      l1 = new Lastwagen();
-		  l1.drawLastwagen(this, xLastwagen , yLastwagen);
-		  l3 = new Lastwagen();
-		  l3.drawLastwagen(this, xLastwagen - 236 , yLastwagen);
+    //Erstellung AutoLinks-Objekte
+		  a1.drawAutoLinks(this);
 		  
-		  l2 = new Lastwagen();
-		  l2.drawLastwagen(this, xLastwagen + 50, yLastwagen + 157);
-		  l4 = new Lastwagen();
-		  l4.drawLastwagen(this, xLastwagen + 200, yLastwagen + 157);
-		  
+	//Kollision Frogger mit AutoLinks
 		  Kollision k1 = new Kollision();
-		  k1.checkCollision(xFrogger, yFrogger, xAutoLinks, yAutoLinks, xAutoLinks);
-		  Bewegung m3 = new Bewegung();
-		  xAutoLinks = m3.moveAutoLinks(xAutoLinks, speed);
-		  a1 = new AutoLinks();
-		  a1.drawAutoLinks(this, xAutoLinks, yAutoLinks);
+		  k1.checkCollisionAL(f1.xFrogger, f1.yFrogger, a1.getXAutoLink(), a1.getYAutoLinks(), f1);
 		  
-		  Bewegung m4 = new Bewegung();
-		  xAutoRechts = m4.moveAutoRechts(xAutoRechts, speed);
-		  c1 = new AutoRechts();
-		  c1.drawAutoRechts(this, xAutoRechts + 200, yAutoRechts - 2);
-		  c3 = new AutoRechts();
-		  c3.drawAutoRechts(this, xAutoRechts + 50, yAutoRechts - 2);
-		  c2 = new AutoRechts();
-		  c2.drawAutoRechts(this, xAutoRechts - 200, yAutoRechts + 156);
+		  
+		  
+	//Bewegung AutoRechts
+		  c1.setXAutoRechts(m4.moveAutoRechts(c1.getXAutoRechts(), speed));
+		  c2.setXAutoRechts(m4.moveAutoRechts(c2.getXAutoRechts(), speed));
+		  c3.setXAutoRechts(m4.moveAutoRechts(c3.getXAutoRechts(), speed));
+		  
+	//Erstellung AutoRechts-Objekte
+		  c1.drawAutoRechts(this);
+		  c3.drawAutoRechts(this);
+		  c2.drawAutoRechts(this);
+	  
+		  System.out.println(f1.xFrogger);
+		  System.out.println(f1.yFrogger);
+		  //System.out.print(xAutoLinks);
+		  //System.out.println(yAutoLinks);
 	  }
-	 
-	/**
-	 * Fenstergrösse
-	 */
+	
+	//Fenstergrösse wird festgelegt
 	  public void settings() {
 	        size(710,940);
 	      }
-	  
+	 
  
-	  /**
-	   * Steuerung für Frogger Klasse
-	   */
-  public void keyPressed() {
+
+	//Steuerung für Frogger Klasse
+	  public void keyPressed() {
 		  
 		  switch(keyCode) {
-		  	case UP: yFrogger =  yFrogger - speedFrogger;  break;
-		  	case DOWN: yFrogger = yFrogger + speedFrogger; break;
-		  	case LEFT: xFrogger =  xFrogger - speedFrogger; break;
-		  	case RIGHT: xFrogger = xFrogger + speedFrogger;
+		  	case UP: f1.yFrogger =  f1.yFrogger - f1.speedFrogger;  break;
+		  	case DOWN: f1.yFrogger = f1.yFrogger + f1.speedFrogger; break;
+		  	case LEFT: f1.xFrogger =  f1.xFrogger - f1.speedFrogger;break;
+		  	case RIGHT: f1.xFrogger = f1.xFrogger + f1.speedFrogger;
 		  } 
-	  }
+		  
+		
+	//Frogger border wird erstellt	  
+		  if(f1.xFrogger >= 673) {
+			  f1.xFrogger = 672;  
+		  }else if(f1.xFrogger <= 39) {
+			  f1.xFrogger = 40;
+		  }else if(f1.yFrogger >= 901) {
+			  f1.yFrogger = 900;
+		  }else if(f1.yFrogger <= 30) {
+			  f1.yFrogger = 31;
+		  }
+		  
+  	}  
+  
+  }
   
   
-	}
+	
 
 	  

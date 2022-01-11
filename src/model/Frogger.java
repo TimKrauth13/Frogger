@@ -8,70 +8,107 @@ import processing.core.PApplet;
  *
  */
 public class Frogger extends PApplet {
-	
-	
-	private int angle;
 
+	public float xFrogger = 356;
+	public float yFrogger = 900;
+	public float speedFrogger = 79;
+	
+	
 	/**
-	 * drawFrogger-Funktion
-	 * @param window
-	 * @param x
-	 * @param y
+	 * Konstruktor für Frogger-Klasse
+	 * @param xFrogger
+	 * @param yFrogger
+	 * @param speedFrogger
 	 */
-	 public void drawFrogger(PApplet window, float x, float y){  
+	 public Frogger(float xFrogger, float yFrogger, float speedFrogger) {
+		this.xFrogger = xFrogger;
+		this.yFrogger = yFrogger;
+		this.speedFrogger = speedFrogger;
+	}
+
+/**
+ * Getter und Setter für Frogger-Klasse
+ * @return
+ */
+	public float getXFrogger() {
+		return xFrogger;
+	}
+	
+	public void setXFrogger(float xFrogger) {
+		this.xFrogger = xFrogger;
+	}
+
+	public float getYFrogger() {
+		return yFrogger;
+	}
+
+	public void setYFrogger(float yFrogger) {
+		this.yFrogger = yFrogger;
+	}
+
+	public float getSpeedFrogger() {
+		return speedFrogger;
+	}
+
+	public void setSpeedFrogger(float speedFrogger) {
+		this.speedFrogger = speedFrogger;
+	}
+
+/**
+ * Drawmethode Frogger-Objekt
+ * @param window
+ */
+	public void drawFrogger(PApplet window){  
 		 
 		 window.noStroke();
 		 
 		 //Vorderbeine
 		 	window.fill(0,200,0);
-		 	window.circle(x-15, y-15, 20);
-		 	window.circle(x+15, y-15, 20);
+		 	window.circle(xFrogger-15, yFrogger-15, 20);
+		 	window.circle(xFrogger+15, yFrogger-15, 20);
 		 	
 		 //Hinterbeine
-		 	window.circle(x-12, y+20, 20);
-		 	window.circle(x+12, y+20, 20);
+		 	window.circle(xFrogger-12, yFrogger+20, 20);
+		 	window.circle(xFrogger+12, yFrogger+20, 20);
 		 	
-		 
 		 //Körper
-		 	window.circle(x, y, 50);
+		 	window.circle(xFrogger, yFrogger, 50);
 		 	
 		 //Zunge	
 			window.fill(200,0,0);
-			window.circle(x, y-23, 15);
+			window.circle(xFrogger, yFrogger-23, 15);
 		 	
 		 //Körper
 			window.fill(0,255,0);
-		 	window.circle(x, y, 50);
+		 	window.circle(xFrogger, yFrogger, 50);
 		 	
 		 //Nase
 		 	window.fill(0,170,0);
-			window.circle(x-3, y-20, 2);
-		 	window.circle(x+3, y-20, 2);
+			window.circle(xFrogger-3, yFrogger-20, 2);
+		 	window.circle(xFrogger+3, yFrogger-20, 2);
 		 	
 		 //Punkte
 			window.fill(0,220,0);
-		 	window.circle(x-10, y+8, 5);
-		 	window.circle(x+10, y+8, 5);
+		 	window.circle(xFrogger-10, yFrogger+8, 5);
+		 	window.circle(xFrogger+10, yFrogger+8, 5);
 		 	
-		 	window.circle(x-5, y+13, 5);
-		 	window.circle(x+5, y+13, 5);
+		 	window.circle(xFrogger-5, yFrogger+13, 5);
+		 	window.circle(xFrogger+5, yFrogger+13, 5);
 		 	
-		 	window.circle(x-15, y+13, 5);
-		 	window.circle(x+15, y+13, 5);
-		 	
-		 	
+		 	window.circle(xFrogger-15, yFrogger+13, 5);
+		 	window.circle(xFrogger+15, yFrogger+13, 5);
 		 	
 		 //Augen
-		 	window.circle(x-15, y-8, 20);
-		 	window.circle(x+15, y-8, 20);
+		 	window.circle(xFrogger-15, yFrogger-8, 20);
+		 	window.circle(xFrogger+15, yFrogger-8, 20);
 		 	
 		 	window.fill(255);
-		 	window.circle(x-15, y-10, 20);
-		 	window.circle(x+15, y-10, 20);
+		 	window.circle(xFrogger-15, yFrogger-10, 20);
+		 	window.circle(xFrogger+15, yFrogger-10, 20);
 		 
 		 	window.fill(0);
-		 	window.circle(x-15, y-15, 10);
-		 	window.circle(x+15, y-15, 10);
+		 	window.circle(xFrogger-15, yFrogger-15, 10);
+		 	window.circle(xFrogger+15, yFrogger-15, 10);
 	 }
 
 }
