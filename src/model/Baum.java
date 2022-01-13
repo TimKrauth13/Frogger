@@ -7,9 +7,9 @@ import processing.core.PApplet;
 
 public class Baum extends PApplet {
 
-	private float xBaum = 200;
-	private float yBaum = 79;
-	private int richtung = 0;
+	public float xBaum = 200;
+	public float yBaum = 79;
+	public int richtung = 0;
 	
 	
 /**

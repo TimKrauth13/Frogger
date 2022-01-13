@@ -22,19 +22,19 @@ public class Seerose extends PApplet{
 	 * Getter und Setter für Seerosen-Klasse 
 	 * @return
 	 */
-	public float getxSeerose() {
+	public float getXSeerose() {
 		return xSeerose;
 	}
 
-	public void setxSeerose(float xSeerose) {
+	public void setXSeerose(float xSeerose) {
 		this.xSeerose = xSeerose;
 	}
 
-	public float getySeerose() {
+	public float getYSeerose() {
 		return ySeerose;
 	}
 
-	public void setySeerose(float ySeerose) {
+	public void setYSeerose(float ySeerose) {
 		this.ySeerose = ySeerose;
 	}
 

@@ -53,7 +53,7 @@ public class Bewegung {
 		
 		public float moveAutoLinks(float xAutoLinks, float speed) {
 			
-			xAutoLinks = xAutoLinks + speed+15;
+			xAutoLinks = xAutoLinks + speed + 15;
 			
 			if(xAutoLinks >= 1200) {
 				xAutoLinks = -200;

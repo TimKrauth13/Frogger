@@ -22,7 +22,7 @@ public class AutoLinks extends PApplet {
 	 * Getter und Setter der AutoLinks-Klasse
 	 * @return
 	 */
-	public float getXAutoLink() {
+	public float getXAutoLinks() {
 		return xAutoLinks;
 	}
 	
