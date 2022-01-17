@@ -18,6 +18,14 @@ import model.Leben;
 
 public class FroggerGameController extends PApplet{
 	
+	
+//Enum für Spielzustand wird erstellt	
+	enum SpielZustand{
+		Start, Spielen, Spielende;
+	}
+	SpielZustand state = SpielZustand.Start;
+	
+	
 //Speed Variabele
 	float speed = 5;
 		  
@@ -127,27 +135,52 @@ public class FroggerGameController extends PApplet{
 		 
 	  }
 	 
-	//Steuerung für Frogger Klasse
+	
+	//SSwitch Case für SpielZustand
 	  public void keyPressed() {
+		  	switch(state) {
+	        case Start: keyPressedStartScreen(); break;
+	        case Spielen: keyPressedInGame(); break;
+	        case Spielende: keyPressedEndScreen(); break;
+	        }
+	  }
+	  
+	  public void keyPressedStartScreen() {
+	        if (key == 's') {
+	        state = SpielZustand.Spielen;
+	        }
+	    }	
 		  
-		  switch(keyCode) {
-		  	case UP: f1.yFrogger =  f1.yFrogger - f1.speedFrogger;  break;
-		  	case DOWN: f1.yFrogger = f1.yFrogger + f1.speedFrogger; break;
-		  	case LEFT: f1.xFrogger =  f1.xFrogger - f1.speedFrogger;break;
-		  	case RIGHT: f1.xFrogger = f1.xFrogger + f1.speedFrogger;
-		  } 
 		  
-	//Frogger border wird erstellt	  
-		  if(f1.xFrogger >= 673) {
-			  f1.xFrogger = 672;  
-		  }else if(f1.xFrogger <= 39) {
-			  f1.xFrogger = 40;
-		  }else if(f1.yFrogger >= 901) {
-			  f1.yFrogger = 900;
-		  }else if(f1.yFrogger <= 30) {
-			  f1.yFrogger = 31;
-		  }
-		  
+		        
+	 
+		    public void keyPressedInGame() {
+		    	
+	//Steuerungs Funktion für Frogger  	
+		    	switch(keyCode) {
+			  	case UP: f1.yFrogger =  f1.yFrogger - f1.speedFrogger;  break;
+			  	case DOWN: f1.yFrogger = f1.yFrogger + f1.speedFrogger; break;
+			  	case LEFT: f1.xFrogger =  f1.xFrogger - f1.speedFrogger;break;
+			  	case RIGHT: f1.xFrogger = f1.xFrogger + f1.speedFrogger;break;
+		    	}
+		    	//Frogger border wird erstellt	  
+				  if(f1.xFrogger >= 673) {
+					  f1.xFrogger = 672;  
+				  }else if(f1.xFrogger <= 39) {
+					  f1.xFrogger = 40;
+				  }else if(f1.yFrogger >= 901) {
+					  f1.yFrogger = 900;
+				  }else if(f1.yFrogger <= 30) {
+					  f1.yFrogger = 31;
+				  }
+				  
+		    	
+		    }
+		    	
+		    	public void keyPressedEndScreen() {
+			        if (key =='n') {
+			            state = SpielZustand.Start;
+			        }
  	}  
 	  
 	/**
@@ -155,12 +188,56 @@ public class FroggerGameController extends PApplet{
 	   */
 	  public void draw() {
 	
+	//Leben werden zurückgesetzt
+		  if (q1.life == 0) {
+		  		state = SpielZustand.Spielende;
+		  		q1.life = 3;
+		  	}
+		  
+	//SpielZustand Start
+		  if(state == SpielZustand.Start) {
+			  PImage img;
+		      img = loadImage("images/background.PNG");
+		      image(img, 0, 0);
+		      
+		      fill(255);
+			  textSize(100);
+			  text ("Frogger", 170, 150);
+			  
+			  textSize(50);
+			  text ("Drücke 's' für Start", 130, 250);
+			  
+			  q1.life = 3;
+			  h1.score = 0;
+			  f1.xFrogger = 356;
+			  f1.yFrogger = 900;
+		  }
+		  
+	//SpielZustand Spielende
+		  if(state == SpielZustand.Spielende) {
+			  
+			  PImage img;
+		      img = loadImage("images/background.PNG");
+		      image(img, 0, 0);
+		      
+			  fill(255);
+			  textSize(100);
+			  text ("Ende", 240, 150);
+			  textSize(50);
+			  text ("Erreichte Punktzahl: " + h1.getScore(), 90, 250);
+			  textSize(30);
+			  text ("Drücke 'n' für neuen Versuch", 150, 300);
+			  
+		  }
+		  
+	 //SpielZustand Spielen 
+		  if(state == SpielZustand.Spielen) {
+			  
+			 	  
 	//Hintergrundbild wird geladen
 		  PImage img;
 	      img = loadImage("images/background.PNG");
 	      image(img, 0, 0);
-	      
-	
 	      
 	//Erstellung Seerosen-Objekte
 		  r1.drawSeerose(this);
@@ -171,16 +248,15 @@ public class FroggerGameController extends PApplet{
 		  k4.checkCollisionSR(f1.xFrogger, f1.yFrogger, r1.getXSeerose(), r1.getYSeerose(), f1, h1);
 		  k4.checkCollisionSR(f1.xFrogger, f1.yFrogger, r2.getXSeerose(), r2.getYSeerose(), f1, h1);
 		  k4.checkCollisionSR(f1.xFrogger, f1.yFrogger, r3.getXSeerose(), r3.getYSeerose(), f1, h1);
-		   
 		  
 	//Bewegung für Baum-Objekte	  
-		  b1.setXBaum(m1.moveBaum(b1.getXBaum(), speed, b1.getRichtung()));
-		  b2.setXBaum(m1.moveBaum(b2.getXBaum(), speed, b2.getRichtung()));
-		  b3.setXBaum(m1.moveBaum(b3.getXBaum(), speed, b3.getRichtung()));
-		  b4.setXBaum(m1.moveBaum(b4.getXBaum(), speed, b4.getRichtung()));
-		  b5.setXBaum(m1.moveBaum(b5.getXBaum(), speed, b5.getRichtung()));
-		  b6.setXBaum(m1.moveBaum(b6.getXBaum(), speed, b6.getRichtung()));
-		  b7.setXBaum(m1.moveBaum(b7.getXBaum(), speed, b7.getRichtung()));
+		  b1.setXBaum(m1.moveBaum(b1.getXBaum(), speed + 2, b1.getRichtung()));
+		  b2.setXBaum(m1.moveBaum(b2.getXBaum(), speed + 2, b2.getRichtung()));
+		  b3.setXBaum(m1.moveBaum(b3.getXBaum(), speed + 2, b3.getRichtung()));
+		  b4.setXBaum(m1.moveBaum(b4.getXBaum(), speed - 2, b4.getRichtung()));
+		  b5.setXBaum(m1.moveBaum(b5.getXBaum(), speed - 2, b5.getRichtung()));
+		  b6.setXBaum(m1.moveBaum(b6.getXBaum(), speed - 2, b6.getRichtung()));
+		  b7.setXBaum(m1.moveBaum(b7.getXBaum(), speed -2, b7.getRichtung()));
 			
 	//Erstellung Baum-Objekte	  
 		  b1.drawBaum(this);
@@ -193,14 +269,7 @@ public class FroggerGameController extends PApplet{
 	
 	//Kollision Frogger mit Baum
 		  k5.checkAufBaum(f1.xFrogger, f1.yFrogger,  f1, q1, trees);
-		 /** k5.checkAufBaum(f1.xFrogger, f1.yFrogger, b1.getXBaum(), b1.getYBaum(), f1, q1);
-		  k5.checkAufBaum(f1.xFrogger, f1.yFrogger, b2.getXBaum(), b2.getYBaum(), f1, q1);
-		  k5.checkAufBaum(f1.xFrogger, f1.yFrogger, b3.getXBaum(), b3.getYBaum(), f1, q1);
-		  k5.checkAufBaum(f1.xFrogger, f1.yFrogger, b4.getXBaum(), b4.getYBaum(), f1, q1);
-		  k5.checkAufBaum(f1.xFrogger, f1.yFrogger, b5.getXBaum(), b5.getYBaum(), f1, q1);
-		  k5.checkAufBaum(f1.xFrogger, f1.yFrogger, b6.getXBaum(), b6.getYBaum(), f1, q1);
-		  k5.checkAufBaum(f1.xFrogger, f1.yFrogger, b7.getXBaum(), b7.getYBaum(), f1, q1);
-		  **/
+		
 	//Bewegung LastwagenObjekte
 	      l1.setXLastwagen(m2.moveLastwagen(l1.getXLastwagen(), speed));
 	      l2.setXLastwagen(m2.moveLastwagen(l2.getXLastwagen(), speed));
@@ -255,9 +324,7 @@ public class FroggerGameController extends PApplet{
 	//Erstellung Frogger-Objekt
 	      f1.drawFrogger(this);
 	  
-	  //System.out.println(f1.xFrogger);
-	  //System.out.println(f1.yFrogger);
-		  
+		  }
 	  }
 	
 	//Fenstergrösse wird festgelegt

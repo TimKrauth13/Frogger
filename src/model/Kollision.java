@@ -56,26 +56,16 @@ public class Kollision extends PApplet{
 		}
 		
 		if(isOnTree == false) {
-			System.out.println("ded");
 			f1.setXFrogger(356); f1.setYFrogger(900);
 			q1.life --;
 		}
 		}
 		
 		
-		/**if(xFrogger > xBaum && xFrogger < xBaum + 150 && yFrogger > yBaum  && yFrogger < yBaum + 30 && yFrogger <= 350 ) {
-			System.out.println("----------------------------");
-		}else{
-			System.out.println("IIIIIIIIII");
-			//f1.setXFrogger(356); f1.setYFrogger(900);
-			//System.out.println(yFrogger);
-		}**/
 	}
 	
 }	
 
-//if(xFrogger > xAutoRechts && xFrogger < xAutoRechts + 60 && yFrogger > yAutoRechts && yFrogger < yAutoRechts + 40) {
-	
 		
 	
 
