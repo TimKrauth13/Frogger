@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public class Seerose extends PApplet{
+public final class Seerose extends PApplet{
 
 	private float xSeerose = 79;
 	private float ySeerose = 39;

@@ -3,39 +3,18 @@ package model;
 
 import processing.core.PApplet;
 
-public class Lastwagen{
-		
-	private float xLastwagen = 200;
-	private float yLastwagen = 490;
-	
-		
+public final class Lastwagen extends Auto{
+				
 	/**
 	 * Konstruktor Lastwagen-Klasse
-	 * @param xLastwagen
-	 * @param yLastwagen
+	 * @param getxAuto()
+	 * @param getyAuto()
 	 */
-	public Lastwagen(float xLastwagen, float yLastwagen) {
-		this.xLastwagen = xLastwagen;
-		this.yLastwagen = yLastwagen;
+	public Lastwagen(float xAuto, float yAuto) {
+		super(xAuto, yAuto);
 	}
 	
-	/**
-	 * Getter und Setter für Lastwagen-Klasse
-	 * @return
-	 */
 	
-		public float getXLastwagen() {
-		return xLastwagen;
-	}
-
-	public void setXLastwagen(float xLastwagen) {
-		this.xLastwagen = xLastwagen;
-	}
-
-	public float getYLastwagen() {
-		return yLastwagen;
-	}
-
 /**
  * Drawmethode für Lastwagen-Objekte
  * @param window
@@ -46,35 +25,35 @@ public class Lastwagen{
 		 
 		//Räder
 			window.fill(20);
-			window.rect(xLastwagen+35, yLastwagen-9, 25, 11);
-			window.rect(xLastwagen+35, yLastwagen+37, 25, 11);
-			window.rect(xLastwagen-35, yLastwagen-9, 25, 13);
-			window.rect(xLastwagen-35, yLastwagen+37, 25, 11);
+			window.rect(getxAuto()+35, getyAuto()-9, 25, 11);
+			window.rect(getxAuto()+35, getyAuto()+37, 25, 11);
+			window.rect(getxAuto()-35, getyAuto()-9, 25, 13);
+			window.rect(getxAuto()-35, getyAuto()+37, 25, 11);
 		//Lastwagen
 		 	window.fill(0,100,200);
-		 	window.rect(xLastwagen-40, yLastwagen, 100, 40);
+		 	window.rect(getxAuto()-40, getyAuto(), 100, 40);
 		//Licht vorne
 		 	window.fill(250,250,0);
-			window.rect(xLastwagen+55, yLastwagen, 10, 15);
-			window.rect(xLastwagen+55, yLastwagen+24, 10, 15);
+			window.rect(getxAuto()+55, getyAuto(), 10, 15);
+			window.rect(getxAuto()+55, getyAuto()+24, 10, 15);
 			window.fill(0,100,200);
-		 	window.rect(xLastwagen+2, yLastwagen, 60, 40);
+		 	window.rect(getxAuto()+2, getyAuto(), 60, 40);
 		 //Fenster
 		 	window.fill(0,200,255);
-		 	window.rect(xLastwagen+40, yLastwagen, 15, 40 );
+		 	window.rect(getxAuto()+40, getyAuto(), 15, 40 );
 		 //Dach
 		 	window.fill(0,100,200);
-		 	window.rect(xLastwagen-40, yLastwagen, 80, 40);
+		 	window.rect(getxAuto()-40, getyAuto(), 80, 40);
 		 	
 		/** //Abgas
 		 	window.fill(180);
-		 	window.circle(xLastwagen - 45, yLastwagen + 10, 5);
-		 	window.circle(xLastwagen - 50, yLastwagen + 10, 8);
-		 	window.circle(xLastwagen - 55, yLastwagen + 10, 11);
+		 	window.circle(getxAuto() - 45, getyAuto() + 10, 5);
+		 	window.circle(getxAuto() - 50, getyAuto() + 10, 8);
+		 	window.circle(getxAuto() - 55, getyAuto() + 10, 11);
 		 	*/
 		 /** //Antenne
 		 	window.fill(150);
-		 	window.rect(xLastwagen-55, yLastwagen+3, 30, 2);
+		 	window.rect(getxAuto()-55, getyAuto()+3, 30, 2);
 		*/
 	}
 

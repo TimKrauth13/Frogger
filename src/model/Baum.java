@@ -5,7 +5,7 @@ import processing.core.PApplet;
 
 
 
-public class Baum extends PApplet {
+public final class Baum extends PApplet {
 
 	public float xBaum = 200;
 	public float yBaum = 79;

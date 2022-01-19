@@ -15,7 +15,7 @@ import model.Bewegung;
 import model.Highscore;
 import model.Leben;
 
-public class FroggerGameController extends PApplet{
+public final class FroggerGameController extends PApplet{
 	
 	
 //Enum für Spielzustand wird erstellt	
@@ -264,10 +264,10 @@ public class FroggerGameController extends PApplet{
 		  k5.checkAufBaum(f1.xFrogger, f1.yFrogger,  f1, q1, trees);
 		
 	//Bewegung LastwagenObjekte
-	      l1.setXLastwagen(m2.moveLastwagen(l1.getXLastwagen(), speed));
-	      l2.setXLastwagen(m2.moveLastwagen(l2.getXLastwagen(), speed));
-	      l3.setXLastwagen(m2.moveLastwagen(l3.getXLastwagen(), speed));
-	      l4.setXLastwagen(m2.moveLastwagen(l4.getXLastwagen(), speed));
+	      l1.setxAuto(m2.moveLastwagen(l1.getxAuto(), speed));
+	      l2.setxAuto(m2.moveLastwagen(l2.getxAuto(), speed));
+	      l3.setxAuto(m2.moveLastwagen(l3.getxAuto(), speed));
+	      l4.setxAuto(m2.moveLastwagen(l4.getxAuto(), speed)); 
 	      
 	//Erstellung Lastwagen-Objekte 
 		  l1.drawLastwagen(this);
@@ -276,27 +276,27 @@ public class FroggerGameController extends PApplet{
 		  l4.drawLastwagen(this);
 		 	
 	//Kollision Frogger mit Lastwagen
-		  k2.checkCollisionL(f1.xFrogger, f1.yFrogger, l1.getXLastwagen(), l1.getYLastwagen(), f1, q1);
-		  k2.checkCollisionL(f1.xFrogger, f1.yFrogger, l2.getXLastwagen(), l2.getYLastwagen(), f1, q1);
-		  k2.checkCollisionL(f1.xFrogger, f1.yFrogger, l3.getXLastwagen(), l3.getYLastwagen(), f1, q1);
-		  k2.checkCollisionL(f1.xFrogger, f1.yFrogger, l4.getXLastwagen(), l4.getYLastwagen(), f1, q1);
+		  k2.checkCollisionL(f1.xFrogger, f1.yFrogger, l1.getxAuto(), l1.getyAuto(), f1, q1);
+		  k2.checkCollisionL(f1.xFrogger, f1.yFrogger, l2.getxAuto(), l2.getyAuto(), f1, q1);
+		  k2.checkCollisionL(f1.xFrogger, f1.yFrogger, l3.getxAuto(), l3.getyAuto(), f1, q1);
+		  k2.checkCollisionL(f1.xFrogger, f1.yFrogger, l4.getxAuto(), l4.getyAuto(), f1, q1);
 		  
 	//Bewegung AutoLinks
-		  a1.setXAutoLinks(m3.moveAutoLinks(a1.getXAutoLinks(), speed)); 
-		  a2.setXAutoLinks(m3.moveAutoLinks(a2.getXAutoLinks(), speed)); 
+		  a1.setxAuto(m3.moveAutoLinks(a1.getxAuto(), speed)); 
+		  a2.setxAuto(m3.moveAutoLinks(a2.getxAuto(), speed)); 
 		  
     //Erstellung AutoLinks-Objekte
 		  a1.drawAutoLinks(this);
 		  a2.drawAutoLinks(this);
 		  
 	//Kollision Frogger mit AutoLinks
-		  k1.checkCollisionAL(f1.xFrogger, f1.yFrogger, a1.getXAutoLinks(), a1.getYAutoLinks(), f1, q1);
-		  k1.checkCollisionAL(f1.xFrogger, f1.yFrogger, a2.getXAutoLinks(), a2.getYAutoLinks(), f1, q1);
+		  k1.checkCollisionAL(f1.xFrogger, f1.yFrogger, a1.getxAuto(), a1.getyAuto(), f1, q1);
+		  k1.checkCollisionAL(f1.xFrogger, f1.yFrogger, a2.getxAuto(), a2.getyAuto(), f1, q1);
 		  
 	//Bewegung AutoRechts
-		  c1.setXAutoRechts(m4.moveAutoRechts(c1.getXAutoRechts(), speed));
-		  c2.setXAutoRechts(m4.moveAutoRechts(c2.getXAutoRechts(), speed));
-		  c3.setXAutoRechts(m4.moveAutoRechts(c3.getXAutoRechts(), speed));
+		  c1.setxAuto(m4.moveAutoRechts(c1.getxAuto(), speed));
+		  c2.setxAuto(m4.moveAutoRechts(c2.getxAuto(), speed));
+		  c3.setxAuto(m4.moveAutoRechts(c3.getxAuto(), speed));
 		  
 	//Erstellung AutoRechts-Objekte
 		  c1.drawAutoRechts(this);
@@ -304,9 +304,9 @@ public class FroggerGameController extends PApplet{
 		  c2.drawAutoRechts(this);
 		  
 	//Kollision Frogger mit AutoRechts
-		  k3.checkCollisionAR(f1.xFrogger, f1.yFrogger, c1.getXAutoRechts(), c1.getYAutoRechts(), f1, q1);
-		  k3.checkCollisionAR(f1.xFrogger, f1.yFrogger, c2.getXAutoRechts(), c2.getYAutoRechts(), f1, q1);
-		  k3.checkCollisionAR(f1.xFrogger, f1.yFrogger, c3.getXAutoRechts(), c3.getYAutoRechts(), f1, q1);
+		  k3.checkCollisionAR(f1.xFrogger, f1.yFrogger, c1.getxAuto(), c1.getyAuto(), f1, q1);
+		  k3.checkCollisionAR(f1.xFrogger, f1.yFrogger, c2.getxAuto(), c2.getyAuto(), f1, q1);
+		  k3.checkCollisionAR(f1.xFrogger, f1.yFrogger, c3.getxAuto(), c3.getyAuto(), f1, q1);
 		  
 	//Erstellung Highscore-Objekt
 		  h1.drawHighscore(this);

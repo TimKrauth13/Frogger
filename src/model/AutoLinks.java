@@ -2,36 +2,16 @@ package model;
 
 import processing.core.PApplet;
 
-public class AutoLinks{
+public final class AutoLinks extends Auto{
 	
-	private float xAutoLinks;
-	private float yAutoLinks;
-	
+
 	/**
 	 * Konstruktor AutoLinks
-	 * @param xAutoLinks
-	 * @param yAutoLinks
+	 * @param getxAuto()
+	 * @param getyAuto()
 	 */
-	public AutoLinks(float xAutoLinks, float yAutoLinks) {
-		
-		this.xAutoLinks = xAutoLinks;
-		this.yAutoLinks = yAutoLinks;
-	}
-	
-	/**
-	 * Getter und Setter der AutoLinks-Klasse
-	 * @return
-	 */
-	public float getXAutoLinks() {
-		return xAutoLinks;
-	}
-	
-	public float getYAutoLinks() {
-		return yAutoLinks;
-	}
-	
-	public void setXAutoLinks(float xAutoLinks) {
-		this.xAutoLinks = xAutoLinks;
+	public AutoLinks(float xAuto, float yAuto) {
+		super(xAuto, yAuto);
 	}
 	
 	
@@ -45,38 +25,38 @@ public class AutoLinks{
 	
 	//Räder
 		window.fill(20);
-		window.rect(xAutoLinks, yAutoLinks-9, 25, 13);
-		window.rect(xAutoLinks+35, yAutoLinks-9, 25, 11);
-		window.rect(xAutoLinks, yAutoLinks+36, 25, 13);
-		window.rect(xAutoLinks+35, yAutoLinks+37, 25, 11);
+		window.rect(getxAuto(), getyAuto()-9, 25, 13);
+		window.rect(getxAuto()+35, getyAuto()-9, 25, 11);
+		window.rect(getxAuto(), getyAuto()+36, 25, 13);
+		window.rect(getxAuto()+35, getyAuto()+37, 25, 11);
 	//Auto
 	 	window.fill(220,0,0);
-	 	window.rect(xAutoLinks, yAutoLinks, 60, 40);
+	 	window.rect(getxAuto(), getyAuto(), 60, 40);
 	//Licht vorne
 	 	window.fill(250,250,0);
-		window.rect(xAutoLinks+55, yAutoLinks, 10, 15);
-		window.rect(xAutoLinks+55, yAutoLinks+24, 10, 15);
+		window.rect(getxAuto()+55, getyAuto(), 10, 15);
+		window.rect(getxAuto()+55, getyAuto()+24, 10, 15);
 		window.fill(220,0,0);
-	 	window.rect(xAutoLinks+2, yAutoLinks, 60, 40);
+	 	window.rect(getxAuto()+2, getyAuto(), 60, 40);
 	
 	 //Fenster
 	 	window.fill(0,200,255);
-	 	window.rect(xAutoLinks+40, yAutoLinks,15, 40 );
+	 	window.rect(getxAuto()+40, getyAuto(),15, 40 );
 	 	
 	 //Dach
 	 	window.fill(180,0,0);
-	 	window.rect(xAutoLinks, yAutoLinks, 40, 40);
+	 	window.rect(getxAuto(), getyAuto(), 40, 40);
 	 	
 	/** //Abgas
 	 	window.fill(180);
-	 	window.circle(xAutoLinks - 5, yAutoLinks + 10, 5);
-	 	window.circle(xAutoLinks - 10, yAutoLinks + 10, 8);
-	 	window.circle(xAutoLinks - 15, yAutoLinks + 10, 11);
+	 	window.circle(getxAuto() - 5, getyAuto() + 10, 5);
+	 	window.circle(getxAuto() - 10, getyAuto() + 10, 8);
+	 	window.circle(getxAuto() - 15, getyAuto() + 10, 11);
 	 	/*
 	 	
 	/** //Antenne
 	 	window.fill(150);
-	 	window.rect(xAutoLinks-15, yAutoLinks+3, 30, 2);
+	 	window.rect(getxAuto()-15, getyAuto()+3, 30, 2);
 	 	*/
 	}
 

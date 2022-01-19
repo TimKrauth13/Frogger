@@ -1,7 +1,7 @@
 package model;
 
 
-public class Bewegung {
+public final class Bewegung {
 
 	
 
@@ -31,14 +31,15 @@ public class Bewegung {
 			return xBaum;
 		}
 
-		public float moveLastwagen(float xLastwagen, float speed) {
+		public float moveLastwagen(float xAuto, float speed) {
 			
-			xLastwagen = xLastwagen + speed + 10;
+			xAuto = xAuto + speed + 10;
 			
-			if(xLastwagen >= 1200) {
-				xLastwagen = -200;
+			if(xAuto >= 1200) {
+				xAuto = -200;
+			
 			}
-			return xLastwagen;
+			return xAuto;
 		}
 		
 		public float moveAutoRechts(float xAutoRechts, float speed) {

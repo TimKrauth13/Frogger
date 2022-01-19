@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public class Leben{
+public final class Leben{
 
 	public int life;
 
