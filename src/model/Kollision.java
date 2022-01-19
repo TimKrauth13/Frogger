@@ -2,9 +2,8 @@ package model;
 
 import java.util.ArrayList;
 
-import processing.core.PApplet;
 
-public class Kollision extends PApplet{	
+public class Kollision{	
 	
 	
 	
@@ -52,6 +51,8 @@ public class Kollision extends PApplet{
 		for(Baum b : trees) {
 			if(xFrogger <= b.getXBaum() + 180 && xFrogger >= b.getXBaum() - 30 && yFrogger >= b.getYBaum() && yFrogger <= b.getYBaum() + 60) {
 				isOnTree = true;
+					
+				
 			}
 		}
 		

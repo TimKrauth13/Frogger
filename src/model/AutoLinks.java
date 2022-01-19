@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public class AutoLinks extends PApplet {
+public class AutoLinks{
 	
 	private float xAutoLinks;
 	private float yAutoLinks;
@@ -67,9 +67,17 @@ public class AutoLinks extends PApplet {
 	 	window.fill(180,0,0);
 	 	window.rect(xAutoLinks, yAutoLinks, 40, 40);
 	 	
-	 //Antenne
+	/** //Abgas
+	 	window.fill(180);
+	 	window.circle(xAutoLinks - 5, yAutoLinks + 10, 5);
+	 	window.circle(xAutoLinks - 10, yAutoLinks + 10, 8);
+	 	window.circle(xAutoLinks - 15, yAutoLinks + 10, 11);
+	 	/*
+	 	
+	/** //Antenne
 	 	window.fill(150);
 	 	window.rect(xAutoLinks-15, yAutoLinks+3, 30, 2);
+	 	*/
 	}
 
 }

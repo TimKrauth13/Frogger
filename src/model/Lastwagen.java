@@ -3,7 +3,7 @@ package model;
 
 import processing.core.PApplet;
 
-public class Lastwagen extends PApplet{
+public class Lastwagen{
 		
 	private float xLastwagen = 200;
 	private float yLastwagen = 490;
@@ -65,10 +65,17 @@ public class Lastwagen extends PApplet{
 		 //Dach
 		 	window.fill(0,100,200);
 		 	window.rect(xLastwagen-40, yLastwagen, 80, 40);
-		 //Antenne
+		 	
+		/** //Abgas
+		 	window.fill(180);
+		 	window.circle(xLastwagen - 45, yLastwagen + 10, 5);
+		 	window.circle(xLastwagen - 50, yLastwagen + 10, 8);
+		 	window.circle(xLastwagen - 55, yLastwagen + 10, 11);
+		 	*/
+		 /** //Antenne
 		 	window.fill(150);
 		 	window.rect(xLastwagen-55, yLastwagen+3, 30, 2);
-		
+		*/
 	}
 
 		

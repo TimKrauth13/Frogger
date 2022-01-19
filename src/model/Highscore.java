@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public class Highscore extends PApplet {
+public class Highscore{
 
 	public int score;
 	

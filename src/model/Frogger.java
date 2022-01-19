@@ -7,7 +7,7 @@ import processing.core.PApplet;
  * @author Tim
  *
  */
-public class Frogger extends PApplet {
+public class Frogger{
 
 	public float xFrogger = 356;
 	public float yFrogger = 900;

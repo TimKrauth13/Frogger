@@ -6,7 +6,6 @@ import model.Lastwagen;
 import processing.core.PApplet;
 import processing.core.PImage;
 import model.Baum;
-
 import java.util.ArrayList;
 
 import model.AutoLinks;
@@ -136,7 +135,7 @@ public class FroggerGameController extends PApplet{
 	  }
 	 
 	
-	//SSwitch Case für SpielZustand
+	//Switch Case für SpielZustand
 	  public void keyPressed() {
 		  	switch(state) {
 	        case Start: keyPressedStartScreen(); break;
@@ -151,9 +150,6 @@ public class FroggerGameController extends PApplet{
 	        }
 	    }	
 		  
-		  
-		        
-	 
 		    public void keyPressedInGame() {
 		    	
 	//Steuerungs Funktion für Frogger  	
@@ -173,8 +169,6 @@ public class FroggerGameController extends PApplet{
 				  }else if(f1.yFrogger <= 30) {
 					  f1.yFrogger = 31;
 				  }
-				  
-		    	
 		    }
 		    	
 		    	public void keyPressedEndScreen() {
@@ -225,9 +219,8 @@ public class FroggerGameController extends PApplet{
 			  text ("Ende", 240, 150);
 			  textSize(50);
 			  text ("Erreichte Punktzahl: " + h1.getScore(), 90, 250);
-			  textSize(30);
-			  text ("Drücke 'n' für neuen Versuch", 150, 300);
-			  
+			  textSize(40);
+			  text ("Drücke 'n' für neuen Versuch", 80, 320);
 		  }
 		  
 	 //SpielZustand Spielen 

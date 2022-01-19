@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public class AutoRechts extends PApplet {
+public class AutoRechts{
 	
 	private float xAutoRechts = 390;
 	private float yAutoRechts = 570;
@@ -64,8 +64,15 @@ public class AutoRechts extends PApplet {
 		 	window.fill(100,160,160);
 		 	window.rect(xAutoRechts+20, yAutoRechts, 40, 40);
 		 	
-		 //Antenne
+		/** //Abgas
+		 	window.fill(180);
+		 	window.circle(xAutoRechts + 60, yAutoRechts + 30, 5);
+		 	window.circle(xAutoRechts + 65, yAutoRechts + 30, 8);
+		 	window.circle(xAutoRechts + 70, yAutoRechts + 30, 11);
+		 	*/
+		/** //Antenne
 		 	window.fill(150);
 		 	window.rect(xAutoRechts+45, yAutoRechts+36, 30, 2);
+		 	*/
 		}
 }
