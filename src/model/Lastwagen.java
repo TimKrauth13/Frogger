@@ -57,5 +57,6 @@ public final class Lastwagen extends Auto{
 		*/
 	}
 
+
 		
 }

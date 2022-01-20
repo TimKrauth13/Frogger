@@ -1,10 +1,7 @@
 package model;
 
 
-public final class Bewegung {
-
-	
-
+public class Bewegung{
 		/**
 		 * Konstruktor für moveBaum
 		 * @param xBaum
@@ -31,7 +28,7 @@ public final class Bewegung {
 			return xBaum;
 		}
 
-		public float moveLastwagen(float xAuto, float speed) {
+public float moveLastwagen(float xAuto, float speed) {
 			
 			xAuto = xAuto + speed + 10;
 			
@@ -41,7 +38,7 @@ public final class Bewegung {
 			}
 			return xAuto;
 		}
-		
+
 		public float moveAutoRechts(float xAutoRechts, float speed) {
 			
 			xAutoRechts = xAutoRechts - speed - 13;
@@ -61,7 +58,9 @@ public final class Bewegung {
 			}
 			return xAutoLinks;
 		}
+		
 }
+
 		
 	
 

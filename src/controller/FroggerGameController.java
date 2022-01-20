@@ -17,18 +17,14 @@ import model.Leben;
 
 public final class FroggerGameController extends PApplet{
 	
+	int speed = 5;
 	
 //Enum für Spielzustand wird erstellt	
 	enum SpielZustand{
 		Start, Spielen, Spielende;
 	}
 	SpielZustand state = SpielZustand.Start;
-	
-	
-//Speed Variabele
-	float speed = 5;
 		  
-	
 //Objekte
 	Frogger f1;
 	

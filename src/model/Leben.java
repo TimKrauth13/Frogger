@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public final class Leben{
+public class Leben implements Score{
 
 	public int life;
 
@@ -13,11 +13,11 @@ public final class Leben{
 	}
 
 //Getter und Setter Für Leben-Klasse
-	public int getLeben() {
+	public int getScore() {
 		return life;
 	}
 
-	public void setLeben(int life) {
+	public void setScore(int life) {
 		this.life = life;
 	}
 	
@@ -26,7 +26,7 @@ public final class Leben{
 		
 		 window.fill(0);
 		  window.textSize(30);
-		  window.text ("Leben: "+ getLeben(), 570, 913);
+		  window.text ("Leben: "+ getScore(), 570, 913);
 	}
 }
 

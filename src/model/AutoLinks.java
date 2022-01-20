@@ -4,7 +4,6 @@ import processing.core.PApplet;
 
 public final class AutoLinks extends Auto{
 	
-
 	/**
 	 * Konstruktor AutoLinks
 	 * @param getxAuto()
