@@ -2,16 +2,26 @@ package model;
 
 import processing.core.PApplet;
 
+/**
+ * Highscore Klasse wird erstellt
+ * @author Tim
+ *
+ */
 public final class Highscore implements Score{
 
 	public int score;
 	
-//Konstruktor für Highscore-Klasse	
+	/**
+	 * Konstruktor der Highscore Klasse
+	 * @param score
+	 */
 	public Highscore(int score) {
 		this.score = 0;
 	}
 
-//Getter für Highscore-Klasse
+	/**
+	 * Setter und Getter für Score
+	 */
 	public int getScore() {
 		return score;
 	}
@@ -20,7 +30,10 @@ public final class Highscore implements Score{
 		this.score = score;
 	}
 
-//Drawmethode Highscore
+	/**
+	 * drawHighscore-Methode wird erstellt
+	 * @param window
+	 */
 	public void drawHighscore(PApplet window){ 
 		  
 		  window.fill(0);

@@ -15,6 +15,11 @@ import model.Bewegung;
 import model.Highscore;
 import model.Leben;
 
+/**
+ * Klasse FroggerGameController wird erstellt
+ * @author Tim
+ *
+ */
 public final class FroggerGameController extends PApplet{
 	
 	int speed = 5;
@@ -25,7 +30,7 @@ public final class FroggerGameController extends PApplet{
 	}
 	SpielZustand state = SpielZustand.Start;
 		  
-//Objekte
+//Objekte werden Erstellt
 	Frogger f1;
 	
 	Seerose r1;
@@ -69,12 +74,17 @@ public final class FroggerGameController extends PApplet{
 	
 	ArrayList<Baum> trees;
 	
-//startet das Fenster	
+/**
+ * Main-Methode wird erstellt	
+ * @param args
+ */
 	public static void main(String[] args) {
 		PApplet.main("controller.FroggerGameController");
 		}
 
-//Objekte erstellung	 
+/**
+ * Setup-Methode wird erstellt	 
+ */
 	 public void setup() {
 		 
 		 f1 = new Frogger(356, 900, 79); 
@@ -130,8 +140,10 @@ public final class FroggerGameController extends PApplet{
 		 
 	  }
 	 
-	
-	//Switch Case für SpielZustand
+	/**
+	 * KeyPressed-Methode wird erstellt
+	 * 	Switch Case für SpielZustand
+	 */
 	  public void keyPressed() {
 		  	switch(state) {
 	        case Start: keyPressedStartScreen(); break;
@@ -139,13 +151,18 @@ public final class FroggerGameController extends PApplet{
 	        case Spielende: keyPressedEndScreen(); break;
 	        }
 	  }
-	  
+	  /**
+	   * KeyPressedStartScreen-Methode wird erstellt
+	   */
 	  public void keyPressedStartScreen() {
 	        if (key == 's') {
 	        state = SpielZustand.Spielen;
 	        }
 	    }	
 		  
+	  /**
+	   * keyPressedInGame-Methode wird erstellt
+	   */
 		    public void keyPressedInGame() {
 		    	
 		    	//Steuerungs Funktion für Frogger  	
@@ -166,7 +183,10 @@ public final class FroggerGameController extends PApplet{
 					  f1.yFrogger = 31;
 				  }
 		    	}
-		    	
+		    
+		/**
+		 * keyPressedEndScreen-Methode wird erstellt
+		 */
 		    	public void keyPressedEndScreen() {
 			        if (key =='n') {
 			            state = SpielZustand.Start;
@@ -174,8 +194,8 @@ public final class FroggerGameController extends PApplet{
 		    	}  
 	  
 	/**
-	   * Aufruf Draw-Methode für Bäume und Autos
-	   */
+	 * draw-Methode wird für jeden Spielzustand erstellt
+	 */
 	  public void draw() {
 	
 	//Leben werden zurückgesetzt
@@ -316,7 +336,11 @@ public final class FroggerGameController extends PApplet{
 		  }
 	  }
 	
-	//Fenstergrösse wird festgelegt
+
+	  /**
+	   * Settings-Methode wird erstellt 
+	   * Fenstergrösse wird festgelegt
+	   */
 	  public void settings() {
 	        size(710,940);
 	      }

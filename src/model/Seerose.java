@@ -2,6 +2,11 @@ package model;
 
 import processing.core.PApplet;
 
+/**
+ * Seerose Klasse wird erstellt
+ * @author Tim
+ *
+ */
 public final class Seerose extends PApplet{
 
 	private float xSeerose = 79;
@@ -39,10 +44,8 @@ public final class Seerose extends PApplet{
 	}
 
 	/**
-	 * Drawmethode für Seerosen-Klasse
+	 * drawSeerose-Methode wird erstellt
 	 * @param window
-	 * @param x
-	 * @param y
 	 */
 	public void drawSeerose(PApplet window){ 
 	

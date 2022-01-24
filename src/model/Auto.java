@@ -1,15 +1,29 @@
 package model;
 
+/**
+ * Auto Klasse wird erstellt
+ * @author Tim
+ *
+ */
 public abstract class Auto {
 
 	private float xAuto;
 	private float yAuto;
-	
+
+/**
+ * Konstruktor der Klasse Auto
+ * @param xAuto
+ * @param yAuto
+ */
 	public Auto(float xAuto, float yAuto) {
 		this.xAuto = xAuto;
 		this.yAuto = yAuto;
 	}
-	
+
+/**
+ * Getter und Setter der Klasse Auto werden erstellt
+ * @return
+ */
 	public float getxAuto() {
 		return xAuto;
 	}

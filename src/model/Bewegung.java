@@ -1,9 +1,13 @@
 package model;
 
-
+/**
+ * Bewegung Klasse wird erstellt
+ * @author Tim
+ *
+ */
 public class Bewegung{
 		/**
-		 * Konstruktor für moveBaum
+		 * moveBaum-Methode wird erstellt
 		 * @param xBaum
 		 * @param speed
 		 * @param richtung
@@ -28,7 +32,13 @@ public class Bewegung{
 			return xBaum;
 		}
 
-public float moveLastwagen(float xAuto, float speed) {
+		/**
+		 * moveLastwagen-Methode wird erstellt
+		 * @param xAuto
+		 * @param speed
+		 * @return
+		 */
+		public float moveLastwagen(float xAuto, float speed) {
 			
 			xAuto = xAuto + speed + 10;
 			
@@ -38,7 +48,13 @@ public float moveLastwagen(float xAuto, float speed) {
 			}
 			return xAuto;
 		}
-
+		
+		/**
+		 * moveAutoRechts-Methode wird erstellt
+		 * @param xAuto
+		 * @param speed
+		 * @return
+		 */
 		public float moveAutoRechts(float xAuto, float speed) {
 			
 			xAuto = xAuto - speed - 13;
@@ -49,6 +65,12 @@ public float moveLastwagen(float xAuto, float speed) {
 			return xAuto;
 		}
 		
+		/**
+		 * moveAutoLinks-Methode wird erstellt
+		 * @param xAuto
+		 * @param speed
+		 * @return
+		 */
 		public float moveAutoLinks(float xAuto, float speed) {
 			
 			xAuto = xAuto + speed + 15;

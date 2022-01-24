@@ -55,7 +55,7 @@ public final class Frogger{
 	}
 
 /**
- * Drawmethode Frogger-Objekt
+ * drawFrogger-Methode wird erstellt
  * @param window
  */
 	public void drawFrogger(PApplet window){  

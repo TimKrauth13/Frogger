@@ -2,9 +2,11 @@ package model;
 
 import processing.core.PApplet;
 
-
-
-
+/**
+ * Baum Klasse wird erstellt
+ * @author Tim
+ *
+ */
 public final class Baum extends PApplet {
 
 	public float xBaum = 200;
@@ -13,7 +15,7 @@ public final class Baum extends PApplet {
 	
 	
 /**
- * Konstruktor für Baum-Klasse	
+ * Konstruktor für Baum Klasse	
  * @param xBaum
  * @param yBaum
  * @param richtung
@@ -57,10 +59,8 @@ public final class Baum extends PApplet {
 
 
 /**
- * Drawmethode für Baum-Klasse
+ * drawBaum-Methode der Baum Klasse wird erstellt 
  * @param window
- * @param x
- * @param y
  */
 	public void drawBaum(PApplet window){ 
 		

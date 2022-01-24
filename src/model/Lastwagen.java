@@ -3,24 +3,26 @@ package model;
 
 import processing.core.PApplet;
 
+/**
+ * Lastwagen Klasse wird erstellt
+ * @author Tim
+ *
+ */
 public final class Lastwagen extends Auto{
 				
 	/**
-	 * Konstruktor Lastwagen-Klasse
-	 * @param getxAuto()
-	 * @param getyAuto()
+	 * Konstruktor der Lastwagen Klasse
+	 * @param xAuto
+	 * @param yAuto
 	 */
 	public Lastwagen(float xAuto, float yAuto) {
 		super(xAuto, yAuto);
 	}
 	
-	
-/**
- * Drawmethode für Lastwagen-Objekte
- * @param window
- * @param x
- * @param y
- */
+	/**
+	 * drawLastwagen-Methode wird erstellt
+	 * @param window
+	 */
 		public void drawLastwagen(PApplet window){ 
 		 
 		//Räder
@@ -44,19 +46,5 @@ public final class Lastwagen extends Auto{
 		 //Dach
 		 	window.fill(0,100,200);
 		 	window.rect(getxAuto()-40, getyAuto(), 80, 40);
-		 	
-		/** //Abgas
-		 	window.fill(180);
-		 	window.circle(getxAuto() - 45, getyAuto() + 10, 5);
-		 	window.circle(getxAuto() - 50, getyAuto() + 10, 8);
-		 	window.circle(getxAuto() - 55, getyAuto() + 10, 11);
-		 	*/
-		 /** //Antenne
-		 	window.fill(150);
-		 	window.rect(getxAuto()-55, getyAuto()+3, 30, 2);
-		*/
 	}
-
-
-		
 }

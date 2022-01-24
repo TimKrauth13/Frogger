@@ -2,23 +2,25 @@ package model;
 
 import processing.core.PApplet;
 
+/**
+ * AutoLinks Klasse wird erstellt
+ * @author Tim
+ *
+ */
 public final class AutoLinks extends Auto{
 	
 	/**
-	 * Konstruktor AutoLinks
-	 * @param getxAuto()
-	 * @param getyAuto()
+	 * Konstruktor der Klasse AutoLinks
+	 * @param xAuto
+	 * @param yAuto
 	 */
 	public AutoLinks(float xAuto, float yAuto) {
 		super(xAuto, yAuto);
 	}
 	
-	
 	/**
-	 * drawmethode für AutoLinks
+	 * drawAutoLinks-Methode wird erstellt 
 	 * @param window
-	 * @param x
-	 * @param y
 	 */
 	public void drawAutoLinks(PApplet window){ 
 	
@@ -45,18 +47,6 @@ public final class AutoLinks extends Auto{
 	 //Dach
 	 	window.fill(180,0,0);
 	 	window.rect(getxAuto(), getyAuto(), 40, 40);
-	 	
-	/** //Abgas
-	 	window.fill(180);
-	 	window.circle(getxAuto() - 5, getyAuto() + 10, 5);
-	 	window.circle(getxAuto() - 10, getyAuto() + 10, 8);
-	 	window.circle(getxAuto() - 15, getyAuto() + 10, 11);
-	 	/*
-	 	
-	/** //Antenne
-	 	window.fill(150);
-	 	window.rect(getxAuto()-15, getyAuto()+3, 30, 2);
-	 	*/
 	}
 
 }

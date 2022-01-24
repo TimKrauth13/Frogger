@@ -2,12 +2,17 @@ package model;
 
 import processing.core.PApplet;
 
+/**
+ * AutoRechts Klasse wird erstellt
+ * @author Tim
+ *
+ */
 public final class AutoRechts extends Auto{
 	
 	/**
-	 * Konstruktor AutoRechts
-	 * @param getxAuto()
-	 * @param getyAuto()
+	 * Konstruktor der AutoRechts Klasse
+	 * @param xAuto
+	 * @param yAuto
 	 */
 	public AutoRechts(float xAuto, float yAuto) {
 		super(xAuto, yAuto);
@@ -15,7 +20,7 @@ public final class AutoRechts extends Auto{
 
 	
 	/**
-	 * Drawmethode für AutoRechts
+	 * draw-Methode für AutoRechts wird erstellt
 	 * @param window
 	 */
 	public void drawAutoRechts(PApplet window){ 
@@ -43,16 +48,5 @@ public final class AutoRechts extends Auto{
 		 //Dach
 		 	window.fill(100,160,160);
 		 	window.rect(getxAuto()+20, getyAuto(), 40, 40);
-		 	
-		/** //Abgas
-		 	window.fill(180);
-		 	window.circle(getxAuto() + 60, getyAuto() + 30, 5);
-		 	window.circle(getxAuto() + 65, getyAuto() + 30, 8);
-		 	window.circle(getxAuto() + 70, getyAuto() + 30, 11);
-		 	*/
-		/** //Antenne
-		 	window.fill(150);
-		 	window.rect(getxAuto()+45, getyAuto()+36, 30, 2);
-		 	*/
 		}
 }
