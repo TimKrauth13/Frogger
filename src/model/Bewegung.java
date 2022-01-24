@@ -39,24 +39,24 @@ public float moveLastwagen(float xAuto, float speed) {
 			return xAuto;
 		}
 
-		public float moveAutoRechts(float xAutoRechts, float speed) {
+		public float moveAutoRechts(float xAuto, float speed) {
 			
-			xAutoRechts = xAutoRechts - speed - 13;
+			xAuto = xAuto - speed - 13;
 			
-			if(xAutoRechts <= -300) {
-				xAutoRechts = 1100;
+			if(xAuto <= -300) {
+				xAuto = 1100;
 			}
-			return xAutoRechts;
+			return xAuto;
 		}
 		
-		public float moveAutoLinks(float xAutoLinks, float speed) {
+		public float moveAutoLinks(float xAuto, float speed) {
 			
-			xAutoLinks = xAutoLinks + speed + 15;
+			xAuto = xAuto + speed + 15;
 			
-			if(xAutoLinks >= 1200) {
-				xAutoLinks = -200;
+			if(xAuto >= 1200) {
+				xAuto = -200;
 			}
-			return xAutoLinks;
+			return xAuto;
 		}
 		
 }

@@ -7,18 +7,18 @@ public class Kollision{
 	
 	
 	
-	public void checkCollisionAL( float xFrogger, float yFrogger, float xAutoLinks, float yAutoLinks, Frogger f1, Leben q1) {
+	public void checkCollisionAL( float xFrogger, float yFrogger, float xAuto, float yAuto, Frogger f1, Leben q1) {
 
-			if(xFrogger > xAutoLinks && xFrogger < xAutoLinks + 60 && yFrogger > yAutoLinks && yFrogger < yAutoLinks + 40) {
+			if(xFrogger > xAuto && xFrogger < xAuto + 60 && yFrogger > yAuto && yFrogger < yAuto + 40) {
 				f1.setXFrogger(356); 
 				f1.setYFrogger(900);
 				q1.life --;
 			}
 	}
 	
-	public void checkCollisionL( float xFrogger, float yFrogger, float xLastwagen, float yLastwagen, Frogger f1, Leben q1) {
+	public void checkCollisionL( float xFrogger, float yFrogger, float xAuto, float yAuto, Frogger f1, Leben q1) {
 
-		if(xFrogger > xLastwagen && xFrogger < xLastwagen + 100 && yFrogger > yLastwagen && yFrogger < yLastwagen + 40) {
+		if(xFrogger > xAuto && xFrogger < xAuto + 100 && yFrogger > yAuto && yFrogger < yAuto + 40) {
 			f1.setXFrogger(356); 
 			f1.setYFrogger(900);
 			q1.life --;
@@ -26,9 +26,9 @@ public class Kollision{
 		}
 	
 	
-	public void checkCollisionAR( float xFrogger, float yFrogger, float xAutoRechts, float yAutoRechts, Frogger f1, Leben q1) {
+	public void checkCollisionAR( float xFrogger, float yFrogger, float xAuto, float yAuto, Frogger f1, Leben q1) {
 
-		if(xFrogger > xAutoRechts && xFrogger < xAutoRechts + 60 && yFrogger > yAutoRechts && yFrogger < yAutoRechts + 40) {
+		if(xFrogger > xAuto && xFrogger < xAuto + 60 && yFrogger > yAuto && yFrogger < yAuto + 40) {
 			f1.setXFrogger(356); 
 			f1.setYFrogger(900);
 			q1.life --;

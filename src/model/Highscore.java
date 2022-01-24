@@ -2,7 +2,7 @@ package model;
 
 import processing.core.PApplet;
 
-public final class Highscore{
+public final class Highscore implements Score{
 
 	public int score;
 	
