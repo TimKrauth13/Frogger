@@ -148,7 +148,7 @@ public final class FroggerGameController extends PApplet{
 		  
 		    public void keyPressedInGame() {
 		    	
-	//Steuerungs Funktion für Frogger  	
+		    	//Steuerungs Funktion für Frogger  	
 		    	switch(keyCode) {
 			  	case UP: f1.yFrogger =  f1.yFrogger - f1.speedFrogger;  break;
 			  	case DOWN: f1.yFrogger = f1.yFrogger + f1.speedFrogger; break;
@@ -165,13 +165,13 @@ public final class FroggerGameController extends PApplet{
 				  }else if(f1.yFrogger <= 30) {
 					  f1.yFrogger = 31;
 				  }
-		    }
+		    	}
 		    	
 		    	public void keyPressedEndScreen() {
 			        if (key =='n') {
 			            state = SpielZustand.Start;
 			        }
- 	}  
+		    	}  
 	  
 	/**
 	   * Aufruf Draw-Methode für Bäume und Autos
